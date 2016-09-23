@@ -1,3 +1,3 @@
 # nodejs-versions
 
-test installation of node js versions.
+test installation of node.js versions.
