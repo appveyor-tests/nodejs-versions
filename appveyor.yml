@@ -18,6 +18,6 @@ install:
       if($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
   
 artifacts:
-  - path: '*\*.txt'
+  - path: '**\*.txt'
 
 build: off
