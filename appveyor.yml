@@ -6,7 +6,7 @@ install:
       foreach ($version in $versions){
         Install-Product node $version
         $nv = node -v
-        if ($nv -eq (v + $version)){
+        if ($nv -eq ("v" + $version)){
           Write-Host "Correct version"
         }
         else{
