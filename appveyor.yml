@@ -7,7 +7,7 @@ install:
         Install-Product node $version
         $nv = node -v
         $File = $version + ".txt"
-        $out = $env:appveyor_build_version + $File
+        $out = $env:appveyor_build_folder + $File
         $nv | Out-File $out
         if ($nv -eq ("v" + $version)){
           Write-Host "Correct version"
