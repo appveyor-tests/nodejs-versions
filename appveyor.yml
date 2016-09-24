@@ -19,6 +19,6 @@ install:
       if($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
   
 artifacts:
-  - path: '**\*.txt'
+  - path: '$env:appveyor_build_folder\*.txt'
 
 build: off
