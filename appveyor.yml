@@ -6,8 +6,8 @@ install:
       foreach ($version in $versions){
         Install-Product node $version
         $nv = node -v
-        $path = %APPVEYOR_BUILD_FOLDER%\($version).txt
-        $nv | Out-File $path
+        $File = $version + ".txt"
+        $nv | Out-File %APPVEYOR_BUILD_VERSION%.$File
         if ($nv -eq ("v" + $version)){
           Write-Host "Correct version"
         }
