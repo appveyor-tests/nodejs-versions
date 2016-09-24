@@ -1,3 +1,20 @@
 version: 1.0.{build}
-build:
-  verbosity: minimal
+
+install:
+  - ps: |
+      $versions = @("4.5.0", "6.6.0", "0.12.15")
+      foreach ($version in $versions){
+        Install-Product node $version
+        $nv = node -v
+        if ($nv -eq (v + $version)){
+          Write-Host "Correct version"
+        }
+        else{
+          exit 1
+        }
+      }
+      if($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+  
+
+
+build: off
