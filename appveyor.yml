@@ -2,7 +2,7 @@ version: 1.0.{build}
 
 install:
   - ps: |
-      $versions = @("7.6.0", "6.10.0", "4.8.0", "0.12.18")
+      $versions = @("8.1.0", "7.10.0", "6.11.0", "4.8.3", "0.12.18")
       foreach ($version in $versions){
         Install-Product node $version
         $nv = node -v
@@ -15,6 +15,7 @@ install:
         else{
           exit 1
         }
+        Start-Sleep -s 1
       }
       if($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
   
