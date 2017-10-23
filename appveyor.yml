@@ -1,6 +1,7 @@
 version: 1.0.{build}
 
 init:
+- appveyor version
 - echo %AVVM_DOWNLOAD_URL%
 
 install:
