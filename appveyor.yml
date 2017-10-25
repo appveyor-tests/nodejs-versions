@@ -18,6 +18,9 @@ test_script:
   - ps: Write-Host "Latest 7.x:"
   - ps: Install-Product node 7
   - ps: node --version  
+  - ps: Write-Host "Latest 4.x:"
+  - ps: Install-Product node 4
+  - ps: node --version  
   
   - ps: |
       $versions = @("8.8.0", "7.10.1", "6.11.5", "4.8.5", "0.12.18")
