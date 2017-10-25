@@ -8,7 +8,7 @@ test_script:
   - ps: Write-Host "Default"
   - ps: $default_node = (node --version)
   - ps: $default_node
-  - ps: if(-not $default_node[0].startsWith('4.')) { throw "Default Node.js version should be 4.x" }
+  - ps: if(-not $default_node.startsWith('v4.')) { throw "Default Node.js version should be 4.x" }
   - ps: Write-Host "Latest 8.x:"
   - ps: Install-Product node 8
   - ps: node --version
