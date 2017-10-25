@@ -4,7 +4,21 @@ init:
 - appveyor version
 - echo %AVVM_DOWNLOAD_URL%
 
-install:
+test_script:
+  - ps: Write-Host "Default"
+  - ps: $default_node = (node --version)
+  - ps: $default_node
+  - ps: if(-not $default_node.startsWith('4.')) { throw "Default Node.js version should be 4.x" }
+  - ps: Write-Host "Latest 8.x:"
+  - ps: Install-Product node 8
+  - ps: node --version
+  - ps: Write-Host "Latest 6.x:"
+  - ps: Install-Product node 6
+  - ps: node --version
+  - ps: Write-Host "Latest 7.x:"
+  - ps: Install-Product node 7
+  - ps: node --version  
+  
   - ps: |
       $versions = @("8.8.0", "7.10.1", "6.11.5", "4.8.5", "0.12.18")
       foreach ($version in $versions){
