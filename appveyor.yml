@@ -22,11 +22,11 @@ test_script:
   - ps: $lts_node
   - ps: if(-not $lts_node.startsWith($env:expected_lts_node)) { throw "LTS Node.js version should be $($env:expected_lts_node).x" }
   
-  - ps: Write-Host "Current"
-  - ps: Install-Product node 'Current'
-  - ps: $current_node = (node --version)
-  - ps: $current_node
-  - ps: if(-not $current_node.startsWith($env:expected_current_node)) { throw "Current Node.js version should be $($env:expected_current_node).x" }
+#  - ps: Write-Host "Current"
+#  - ps: Install-Product node 'Current'
+#  - ps: $current_node = (node --version)
+#  - ps: $current_node
+#  - ps: if(-not $current_node.startsWith($env:expected_current_node)) { throw "Current Node.js version should be $($env:expected_current_node).x" }
   
   - ps: Write-Host "Stable"
   - ps: Install-Product node 'Stable'
