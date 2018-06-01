@@ -55,7 +55,7 @@ test_script:
   - ps: node --version  
   
   - ps: |
-      $versions = @("10.1.0", "9.11.1", "8.11.1", "7.10.1", "6.14.2", "4.9.1", "0.12.18")
+      $versions = @("10.3.0", "9.11.1", "8.11.2", "7.10.1", "6.14.2", "4.9.1", "0.12.18")
       foreach ($version in $versions){
         Install-Product node $version
         $nv = node -v
