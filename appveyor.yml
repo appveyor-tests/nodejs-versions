@@ -8,7 +8,6 @@ environment:
   
 init:
 - appveyor version
-- ps: $env:AVVM_DOWNLOAD_URL='https://appveyornodeavvm.blob.core.windows.net/node'
 - echo %AVVM_DOWNLOAD_URL%
 
 test_script:
