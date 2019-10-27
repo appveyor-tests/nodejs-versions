@@ -2,9 +2,9 @@ version: 1.0.{build}
 
 environment:
   expected_default_node: v8.
-  expected_lts_node: v10.
-  expected_stable_node: v10.
-  expected_current_node: v12.
+  expected_lts_node: v12.
+  expected_stable_node: v12.
+  expected_current_node: v13.
   
 init:
 - appveyor version
@@ -55,7 +55,7 @@ test_script:
   - ps: node --version  
   
   - ps: |
-      $versions = @("12.6.0", "11.15.0", "10.16.0", "9.11.2", "8.16.0", "7.10.1", "6.16.0", "4.9.1", "0.12.18")
+      $versions = @("13.0.1", "12.13.0", "11.15.0", "10.17.0", "9.11.2", "8.16.2", "7.10.1", "6.16.0", "4.9.1", "0.12.18")
       foreach ($version in $versions){
         Install-Product node $version
         $nv = node -v
