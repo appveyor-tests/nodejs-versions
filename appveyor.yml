@@ -2,9 +2,9 @@ version: 1.0.{build}
 
 environment:
   expected_default_node: v14.
-  expected_lts_node: v14.
-  expected_stable_node: v14.
-  expected_current_node: v16.
+  expected_lts_node: v16.
+  expected_stable_node: v16.
+  expected_current_node: v17.
   
 init:
 - appveyor version
@@ -35,7 +35,7 @@ test_script:
   - ps: if(-not $stable_node.startsWith($env:expected_stable_node)) { throw "Stable Node.js version should be $($env:expected_stable_node).x" }
   
   - ps: |
-      $versions = @("16.8.0", "15.14.0", "14.17.6", "13.14.0", "12.22.6", "11.15.0", "10.24.1", "9.11.2", "8.17.0", "7.10.1", "6.16.0", "4.9.1", "0.12.18")
+      $versions = @("17.1.0", "16.13.0", "15.14.0", "14.18.1", "13.14.0", "12.22.7", "11.15.0", "10.24.1", "9.11.2", "8.17.0", "7.10.1", "6.16.0", "4.9.1", "0.12.18")
       foreach ($version in $versions){
         Install-Product node $version
         $nv = node -v
