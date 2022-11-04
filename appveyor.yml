@@ -1,7 +1,7 @@
 version: 1.0.{build}
 
 environment:
-  expected_default_node: v14.
+  expected_default_node: v18.
   expected_lts_node: v16.
   expected_stable_node: v16.
   expected_current_node: v18.
