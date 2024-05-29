@@ -18,7 +18,8 @@ test_script:
   - ps: if(-not $default_node.startsWith($env:expected_default_node)) { throw "Default Node.js version should be $($env:expected_default_node).x" }
   
   - ps: Write-Host "LTS"
-  - ps: Install-Product node 'LTS' x86
+  #- ps: Install-Product node 'LTS'
+  - ps: Install-Product node
   - ps: $lts_node = (node --version)
   - ps: $lts_node
   - ps: if(-not $lts_node.startsWith($env:expected_lts_node)) { throw "LTS Node.js version should be $($env:expected_lts_node).x" }
