@@ -19,7 +19,7 @@ test_script:
   
   - ps: Write-Host "LTS"
   #- ps: Install-Product node 'LTS'
-  - ps: Install-Product node
+  - ps: Install-Product node 'LTS'
   - ps: $lts_node = (node --version)
   - ps: $lts_node
   - ps: if(-not $lts_node.startsWith($env:expected_lts_node)) { throw "LTS Node.js version should be $($env:expected_lts_node).x" }
