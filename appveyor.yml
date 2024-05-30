@@ -37,7 +37,7 @@ test_script:
   - ps: if(-not $stable_node.startsWith($env:expected_stable_node)) { throw "Stable Node.js version should be $($env:expected_stable_node).x" }
   
   - ps: |
-      $versions = @("22.2.0", "21.7.3", "20.13.1", "19.9.0", "18.18.2", "17.9.1", "16.20.1", "15.14.0", "14.21.3", "13.14.0", "12.22.12", "11.15.0", "10.24.1", "9.11.2", "8.17.0")
+      $versions = @("22.2.0", "21.7.3", "20.13.1", "19.9.0", "18.20.3", "17.9.1", "16.20.1", "15.14.0", "14.21.3", "13.14.0", "12.22.12", "11.15.0", "10.24.1", "9.11.2", "8.17.0")
       foreach ($version in $versions){
         Install-Product node $version
         $nv = node -v
