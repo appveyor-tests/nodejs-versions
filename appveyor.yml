@@ -10,6 +10,8 @@ init:
 #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 - appveyor version
 - echo %AVVM_DOWNLOAD_URL%
+- ps: Write-Host $APPVEYOR_BUILD_WORKER_IMAGE
+- ps: Write-Host $APPVEYOR_BUILD_WORKER_CLOUD
 
 test_script:
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
