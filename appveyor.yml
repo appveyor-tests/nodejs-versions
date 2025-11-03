@@ -1,10 +1,10 @@
 version: 1.0.{build}
 
 environment:
-  expected_default_node: v24.
-  expected_lts_node: v22.
-  expected_stable_node: v23.
-  expected_current_node: v24.
+  expected_default_node: v25.
+  expected_lts_node: v24.
+  expected_stable_node: v24.
+  expected_current_node: v25.
   
 init:
 #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
@@ -61,5 +61,6 @@ artifacts:
   - path: '**\*.txt'
 
 build: off
+
 
 
