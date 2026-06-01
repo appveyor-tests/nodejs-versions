@@ -1,10 +1,10 @@
 version: 1.0.{build}
 
 environment:
-  expected_default_node: v25.
+  expected_default_node: v26.
   expected_lts_node: v24.
-  expected_stable_node: v24.
-  expected_current_node: v25.
+  expected_stable_node: v26.
+  expected_current_node: v26.
   
 init:
 #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
@@ -38,9 +38,11 @@ test_script:
   - ps: $stable_node = (node --version)
   - ps: $stable_node
   - ps: if(-not $stable_node.startsWith($env:expected_stable_node)) { throw "Stable Node.js version should be $($env:expected_stable_node).x" }
-  
+
+  #$versions = @("24.6.0", "23.11.1", "22.21.1", "21.7.3", "20.17.0", "19.9.0", "18.20.3", "17.9.1", "16.20.1", "15.14.0", "14.20.1", "13.14.0", "12.22.12")
   - ps: |
-      $versions = @("24.6.0", "23.11.1", "22.21.1", "21.7.3", "20.17.0", "19.9.0", "18.20.3", "17.9.1", "16.20.1", "15.14.0", "14.20.1", "13.14.0", "12.22.12")
+      
+      $versions = @("26.2.0", "24.16.0", "22.22.3")
       foreach ($version in $versions){
         Install-Product node $version
         $nv = node -v
